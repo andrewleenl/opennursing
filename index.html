@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Medical-Surgical Nursing: A Canadian Open Text — OpenNursing.ca</title>
+<style>
+
+
+/* Warm Editorial / Booktabs University-Press Interactive Reader */
+:root {
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --sand: #F4F1EA;
+  --ink: #1E242B;
+  --muted: #5C6670;
+  --line: #D6D3CD;
+  --accent: #1A434E;
+  --accent-soft: #EBF2F2;
+  --terracotta: #B85D3B;
+  --ok: #2F6F4E;
+  --ok-soft: #EAF4EE;
+  --bad: #A63A2B;
+  --bad-soft: #FBECE9;
+  --grid: #E6D5CE;
+  --grid-bg: #FCF9F7;
+  --mark: #FFE58A;
+  --c-deeper: #5A4B81;
+  --c-scope: #1A434E;
+  --c-canada: #B85D3B;
+  --c-judgment: #2B547E;
+  --c-safety: #B45309;
+  --c-education: #2F6F4E;
+  --c-lifespan: #8C5A32;
+  --c-meds: #4A5568;
+  --c-story: #3D5A6C;
+  --font-body: "Segoe UI", system-ui, -apple-system, "Liberation Sans", sans-serif;
+  --font-serif: Georgia, "Liberation Serif", "Times New Roman", serif;
+  --font-display: Georgia, "Liberation Serif", "Times New Roman", serif;
+  --radius: 2px;
+  --side: 310px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12171A;
+    --surface: #182024;
+    --sand: #1E272C;
+    --ink: #E6EAEF;
+    --muted: #9BA7B2;
+    --line: #2C373E;
+    --accent: #78B3B8;
+    --accent-soft: #1D3136;
+    --terracotta: #E08A68;
+    --ok: #68C496;
+    --ok-soft: #153022;
+    --bad: #F08A80;
+    --bad-soft: #381A18;
+    --grid: rgba(224,138,104,.18);
+    --grid-bg: #1A1D20;
+    --mark: #6B5A12;
+    --c-deeper: #B9A4F0;
+    --c-scope: #78B3B8;
+    --c-canada: #E08A68;
+    --c-judgment: #84B6EA;
+    --c-safety: #F0A660;
+    --c-education: #68C496;
+    --c-lifespan: #D4A57C;
+    --c-meds: #9FA8F0;
+    --c-story: #A9B7C2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12171A;
+  --surface: #182024;
+  --sand: #1E272C;
+  --ink: #E6EAEF;
+  --muted: #9BA7B2;
+  --line: #2C373E;
+  --accent: #78B3B8;
+  --accent-soft: #1D3136;
+  --terracotta: #E08A68;
+  --ok: #68C496;
+  --ok-soft: #153022;
+  --bad: #F08A80;
+  --bad-soft: #381A18;
+  --grid: rgba(224,138,104,.18);
+  --grid-bg: #1A1D20;
+  --mark: #6B5A12;
+  --c-deeper: #B9A4F0;
+  --c-scope: #78B3B8;
+  --c-canada: #E08A68;
+  --c-judgment: #84B6EA;
+  --c-safety: #F0A660;
+  --c-education: #68C496;
+  --c-lifespan: #D4A57C;
+  --c-meds: #9FA8F0;
+  --c-story: #A9B7C2;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.62;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a.xref { text-decoration-style: dotted; color: var(--terracotta); font-weight: 600; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 2px; }
+[tabindex="-1"]:focus { outline: none; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--surface); padding: 8px 12px; z-index: 50; border: 1px solid var(--accent); }
+.skip:focus { left: 8px; }
+
+/* Layout */
+.app { display: grid; grid-template-columns: var(--side) minmax(0, 1fr); min-height: 100vh; }
+.side {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  padding: 20px 18px 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.portal-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--terracotta); text-decoration: none;
+  padding-bottom: 10px; border-bottom: 1px solid var(--line);
+}
+.portal-back:hover { color: var(--accent); }
+.brand { display: grid; gap: 4px; padding-bottom: 8px; border-bottom: 1.5px solid var(--accent); }
+.brand .book { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.brand .ch { font-family: var(--font-display); font-size: 19px; line-height: 1.22; font-weight: 700; color: var(--accent); }
+.meter { display: grid; gap: 5px; font-size: 12.5px; color: var(--muted); }
+.bar { height: 5px; background: var(--sand); overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--terracotta); width: 0; transition: width .3s; }
+.search input {
+  width: 100%; font: inherit; font-size: 14px; padding: 8px 11px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+}
+.toc { display: grid; gap: 14px; }
+.toc h2 {
+  font-family: var(--font-body); font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--terracotta); margin: 0 0 4px; font-weight: 700;
+}
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; }
+.toc a {
+  display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: baseline;
+  padding: 6px 10px; border-left: 2px solid transparent;
+  color: var(--ink); text-decoration: none; font-size: 14px; line-height: 1.35;
+}
+.toc a:hover { background: var(--bg); border-left-color: var(--line); }
+.toc a[aria-current="page"] {
+  background: var(--sand); color: var(--accent); font-weight: 700;
+  border-left: 3px solid var(--terracotta);
+}
+.toc .st { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.toc .st.done { color: var(--ok); font-weight: 700; }
+.results { display: grid; gap: 4px; grid-template-columns: minmax(0, 1fr); }
+.results a { min-width: 0; overflow-wrap: anywhere; display: grid; gap: 2px; padding: 8px 10px; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--bg); font-size: 13.5px; }
+.results a b { color: var(--accent); font-family: var(--font-display); }
+.results .none { font-size: 13.5px; color: var(--muted); }
+mark { background: var(--mark); color: inherit; padding: 0 2px; }
+.side-foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; gap: 8px; flex-wrap: wrap; }
+.chipbtn { border: 1px solid var(--line); background: var(--bg); padding: 5px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.chipbtn:hover { border-color: var(--accent); color: var(--accent); }
+.topbar { display: none; }
+
+/* Editorial Reading Surface */
+main {
+  min-width: 0;
+  padding: 40px max(24px, env(safe-area-inset-right)) 80px max(24px, env(safe-area-inset-left));
+}
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  padding: 42px 48px 48px;
+  box-shadow: 0 2px 12px rgba(26, 67, 78, 0.04);
+  display: grid; gap: 4px;
+}
+.eyebrow {
+  font-size: 11.5px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--terracotta); margin: 0 0 4px;
+}
+h1, .page > h2.title {
+  font-family: var(--font-display); font-weight: 700; line-height: 1.16;
+  color: var(--accent); margin: 0 0 16px;
+  padding-bottom: 12px; border-bottom: 1.5px solid var(--accent);
+  text-wrap: balance;
+}
+h1 { font-size: clamp(28px, 4.2vw, 38px); }
+.page > h2.title { font-size: clamp(24px, 3.6vw, 31px); }
+.page h3 {
+  font-family: var(--font-display); font-size: 20px; line-height: 1.3;
+  color: var(--accent); margin: 26px 0 6px;
+  padding-top: 8px; border-top: 1px solid var(--line);
+}
+.page > p, .page > ul, .page > ol {
+  font-family: var(--font-serif);
+  font-size: 17.5px;
+  line-height: 1.68;
+}
+.page p { margin: 9px 0; }
+.page ul, .page ol { margin: 8px 0; padding-left: 1.4em; }
+.page li { margin: 5px 0; }
+.page li::marker { color: var(--terracotta); }
+
+/* Borderless Soft-Tinted Editorial Callout Boxes */
+.box {
+  --c: var(--accent);
+  margin: 22px 0;
+  padding: 16px 22px 15px;
+  border: none;
+  border-left: 3.5px solid var(--c);
+  background: var(--bg);
+  background: color-mix(in srgb, var(--c) 5%, var(--bg));
+  font-family: var(--font-body);
+}
+.box h3 {
+  font-family: var(--font-display);
+  margin: 3px 0 8px;
+  padding-top: 0;
+  border-top: none;
+  font-size: 18.5px;
+  color: var(--ink);
+}
+.box p, .box ul, .box ol {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.56;
+}
+.box-type {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--c);
+}
+.box-going-deeper { --c: var(--c-deeper); }
+.box-scope-in-practice { --c: var(--c-scope); }
+.box-canadian-context { --c: var(--c-canada); }
+.box-clinical-judgment { --c: var(--c-judgment); }
+.box-clinical-safety { --c: var(--c-safety); }
+.box-patient-education { --c: var(--c-education); }
+.box-lifespan-considerations { --c: var(--c-lifespan); }
+.box-medications { --c: var(--c-meds); }
+.box-practice-story { --c: var(--c-story); }
+.box-going-deeper .box-type::after {
+  content: " · RN required, PN optional";
+  font-weight: 400; letter-spacing: .03em; text-transform: none; color: var(--muted);
+}
+
+/* Three-Line Booktabs Academic Tables */
+.tbl {
+  margin: 24px 0;
+  overflow-x: auto;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+}
+.tbl table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 540px;
+  font-size: 14.5px;
+  line-height: 1.48;
+  border-top: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+.tbl caption {
+  text-align: left;
+  padding: 0 0 8px 0;
+  font-size: 15px;
+  color: var(--ink);
+  caption-side: top;
+}
+.tbl caption strong {
+  color: var(--terracotta);
+  font-weight: 700;
+  margin-right: 4px;
+}
+.tbl th, .tbl td {
+  text-align: left;
+  vertical-align: top;
+  padding: 9px 11px;
+  border-top: 1px solid var(--line);
+}
+.tbl thead th {
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  border-top: none;
+  border-bottom: 1.5px solid var(--accent);
+}
+.tbl tbody th { font-weight: 700; color: var(--ink); }
+
+/* Frameless Editorial Figures */
+.fig {
+  margin: 26px auto;
+  max-width: var(--w, 100%);
+  display: grid;
+  gap: 8px;
+  font-family: var(--font-body);
+}
+.fig .zoom {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+.fig img { display: block; width: 100%; height: auto; margin: 0 auto; }
+.fig figcaption {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.48;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.fig figcaption strong { color: var(--accent); }
+dialog.zoomer { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 96vh; }
+dialog.zoomer::backdrop { background: rgba(18,23,26,.86); }
+dialog.zoomer img { max-width: 96vw; max-height: 88vh; display: block; background: #fff; }
+dialog.zoomer .close { position: fixed; top: 14px; right: 14px; background: var(--surface); border: 1px solid var(--line); padding: 8px 16px; font-weight: 700; cursor: pointer; }
+.refs p { font-family: var(--font-body); padding-left: 2em; text-indent: -2em; font-size: 14px; line-height: 1.48; color: var(--muted); overflow-wrap: anywhere; }
+
+/* Chapter Home Page */
+.hero { display: grid; gap: 8px; padding-bottom: 8px; }
+.byline { color: var(--muted); margin: 0; font-family: var(--font-serif); font-style: italic; font-size: 16px; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 10px; }
+.stat {
+  background: var(--bg);
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 14px;
+  display: grid; gap: 2px;
+  font-family: var(--font-body);
+}
+.stat b { font-family: var(--font-display); font-size: 28px; color: var(--terracotta); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.stat span { font-size: 12.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0; font-family: var(--font-body); }
+.btn {
+  font-weight: 700; font-size: 14.5px; padding: 10px 18px;
+  border: 1.5px solid var(--accent); background: var(--accent); color: var(--surface);
+  cursor: pointer; text-decoration: none; display: inline-block;
+}
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn:hover:not(:disabled) { border-color: var(--terracotta); background: var(--terracotta); color: #fff; }
+.btn.ghost:hover:not(:disabled) { background: var(--sand); color: var(--terracotta); border-color: var(--terracotta); }
+.btn:disabled { opacity: .45; cursor: default; }
+.note { background: var(--bg); border-left: 3px solid var(--terracotta); padding: 14px 18px; margin: 14px 0; font-family: var(--font-body); }
+.note h3 { margin-top: 0 !important; border-top: none !important; padding-top: 0 !important; }
+.version { font-size: 13.5px; color: var(--muted); font-family: var(--font-body); }
+
+/* Licensure Review Questions */
+.qhead { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; font-family: var(--font-body); }
+.score { font-size: 14.5px; color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 600; }
+.q {
+  background: var(--bg);
+  border-top: 1.5px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 20px;
+  margin: 16px 0;
+  display: grid; gap: 12px;
+  font-family: var(--font-body);
+}
+.q .qn { display: flex; gap: 8px; align-items: center; font-size: 13.5px; color: var(--muted); font-weight: 600; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; background: var(--accent-soft); color: var(--accent); }
+.tag.rn { background: var(--terracotta); color: #fff; }
+.q .stem { margin: 0; font-family: var(--font-serif); font-size: 17px; line-height: 1.55; font-weight: 700; color: var(--ink); }
+.q .hint { font-size: 13.5px; color: var(--muted); margin: -4px 0 0; font-style: italic; }
+.opts { display: grid; gap: 8px; }
+.opt {
+  text-align: left; display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: start;
+  padding: 10px 14px; border: 1px solid var(--line); background: var(--surface);
+  cursor: pointer; line-height: 1.48; font-size: 15px;
+}
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt .k { font-weight: 700; width: 25px; height: 25px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); font-size: 12.5px; color: var(--accent); }
+.opt.multi .k { border-radius: 3px; }
+.opt[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); background: var(--accent-soft); }
+.opt[aria-pressed="true"] .k { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.opt .mk { font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; align-self: center; }
+.opt.correct { border-color: var(--ok); background: var(--ok-soft); }
+.opt.correct .k { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.opt.correct .mk { color: var(--ok); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.opt.wrong .k { background: var(--bad); border-color: var(--bad); color: var(--surface); }
+.opt.wrong .mk { color: var(--bad); }
+.opt:disabled { cursor: default; color: var(--ink); }
+.qact { display: flex; gap: 10px; flex-wrap: wrap; }
+.fb { padding: 12px 16px; border-left: 3.5px solid var(--ok); font-size: 15px; line-height: 1.52; }
+.fb.ok { background: var(--ok-soft); border-left-color: var(--ok); }
+.fb.no { background: var(--bad-soft); border-left-color: var(--bad); }
+.fb strong.v { display: block; font-family: var(--font-display); font-size: 16px; }
+.fb.ok strong.v { color: var(--ok); }
+.fb.no strong.v { color: var(--bad); }
+.fb p { margin: 6px 0 0; font-family: var(--font-body); font-size: 15px; }
+.casegrid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; }
+.chart {
+  border-top: 2px solid var(--terracotta);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 20px; margin: 8px 0 6px;
+  background-color: var(--grid-bg);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.chart .lbl { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta); font-weight: 700; }
+.chart p { background: var(--surface); border: 1px solid var(--line); padding: 12px 14px; margin: 8px 0 0; font-family: var(--font-serif); font-size: 16.5px; line-height: 1.6; }
+.chart .fict { font-size: 12.5px; color: var(--muted); font-style: italic; border: 0; background: none; padding: 0; font-family: var(--font-body); }
+
+/* Key Term Flashcards */
+.deckbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin: 6px 0 12px; font-family: var(--font-body); }
+.seg { display: inline-flex; border: 1px solid var(--line); overflow: hidden; }
+.seg button { border: 0; background: var(--surface); padding: 6px 14px; font-size: 13.5px; font-weight: 600; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.flash {
+  width: 100%; min-height: 240px; display: grid; place-items: center; text-align: center;
+  padding: 32px; border-top: 3px solid var(--accent); border-bottom: 1.5px solid var(--accent);
+  border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+  background: var(--bg); cursor: pointer;
+}
+.flash .term { font-family: var(--font-display); font-size: clamp(24px, 4vw, 32px); font-weight: 700; color: var(--accent); text-wrap: balance; }
+.flash .def { font-family: var(--font-serif); font-size: 18px; line-height: 1.58; max-width: 56ch; color: var(--ink); }
+.flash .tip { font-family: var(--font-body); font-size: 12.5px; color: var(--terracotta); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; margin-top: 14px; display: block; }
+.flash.back { border-top-color: var(--terracotta); }
+.deckact { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 14px 0; font-family: var(--font-body); }
+.btn.okb { background: var(--ok); border-color: var(--ok); }
+details.all { margin-top: 20px; font-family: var(--font-body); }
+details.all summary { cursor: pointer; font-weight: 700; color: var(--accent); font-size: 15px; }
+details.all dt { font-family: var(--font-display); font-weight: 700; color: var(--accent); margin-top: 12px; font-size: 16px; }
+details.all dd { margin: 2px 0 0; color: var(--ink); font-size: 14.5px; }
+details.all dt .ok { color: var(--ok); font-family: var(--font-body); font-size: 12.5px; font-weight: 600; margin-left: 6px; }
+
+/* Pager */
+.pager { max-width: 780px; margin: 28px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-family: var(--font-body); }
+.pager a {
+  display: grid; gap: 3px; padding: 14px 18px;
+  border: 1px solid var(--line); border-top: 2px solid var(--accent);
+  text-decoration: none; color: var(--ink); background: var(--surface);
+}
+.pager a:hover { border-top-color: var(--terracotta); background: var(--sand); }
+.pager a span { font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--terracotta); font-weight: 700; }
+.pager a.next { text-align: right; grid-column: 2; }
+.pager a b { font-family: var(--font-display); font-size: 16px; color: var(--accent); }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .topbar { display: flex; position: sticky; top: 0; z-index: 20; align-items: center; gap: 10px; padding: 10px max(16px, env(safe-area-inset-left)); background: var(--surface); border-bottom: 1.5px solid var(--accent); }
+  .topbar .t { font-family: var(--font-display); font-weight: 700; font-size: 15.5px; color: var(--accent); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+  .side { position: fixed; inset: 0 auto 0 0; width: min(88vw, 340px); z-index: 40; transform: translateX(-105%); transition: transform .2s; box-shadow: 0 0 40px rgba(0,0,0,.25); }
+  .side.open { transform: none; }
+  .scrim { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 30; }
+  main { padding: 16px 12px 48px; }
+  .page { padding: 24px 20px 32px; }
+  .stats { grid-template-columns: 1fr; }
+  .fig { max-width: 100%; }
+  .pager { grid-template-columns: 1fr; } .pager a.next { grid-column: 1; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print {
+  .side, .topbar, .pager, .scrim, .qact, .deckact, .skip { display: none !important; }
+  .app { display: block; } body { background: #fff; font-size: 10.5pt; } .page { border: none; box-shadow: none; padding: 0; max-width: 100%; } .box, .tbl, .q, .fig { break-inside: avoid; }
+}
+
+
+.ch-Jump-wrap {
+  display: grid;
+  gap: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.ch-jump-select {
+  width: 100%;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 7px 9px;
+  border: 1.5px solid var(--accent);
+  background: var(--bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+.nav-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.nav-pill {
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-pill:hover, .nav-pill.active {
+  border-color: var(--terracotta);
+  background: var(--sand);
+  color: var(--accent);
+}
+.unit-section {
+  margin: 26px 0 32px;
+}
+.unit-banner {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+  margin-bottom: 14px;
+}
+.unit-roman-lg {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--terracotta);
+  padding-right: 12px;
+  border-right: 1.5px solid var(--line);
+}
+.unit-banner-titles span {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+.unit-banner-titles h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0;
+  color: var(--accent);
+  border: none;
+  padding: 0;
+}
+.book-ch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.book-ch-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-top: 2.5px solid var(--accent);
+  padding: 13px 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.book-ch-card:hover {
+  transform: translateY(-2px);
+  border-top-color: var(--terracotta);
+  box-shadow: 0 6px 16px rgba(26, 67, 78, 0.08);
+  background: var(--surface);
+}
+.book-ch-card .c-top {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-bottom: 6px;
+}
+.book-ch-card .c-num {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--terracotta);
+  line-height: 1;
+}
+.book-ch-card .c-lbl {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.book-ch-card h3 {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  line-height: 1.28;
+  color: var(--accent);
+  margin: 0 0 8px;
+  padding: 0;
+  border: none;
+}
+.book-ch-card .c-meta {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.book-ch-card .c-go {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent);
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+.book-ch-card:hover .c-go {
+  color: var(--terracotta);
+}
+
+
+/* Built-In On-the-Fly Author Editor Mode */
+body.author-editing .page [contenteditable="true"] {
+  outline: 1.5px dashed var(--terracotta);
+  outline-offset: 4px;
+  background: rgba(184, 93, 59, 0.03);
+  cursor: text;
+}
+body.author-editing .page [contenteditable="true"]:focus {
+  outline: 2px solid var(--accent);
+  background: var(--surface);
+}
+.editor-bar {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+  background: var(--accent);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  border-bottom: 3px solid var(--terracotta);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.editor-bar .eb-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.eb-btn {
+  background: #FFFFFF;
+  color: var(--accent);
+  border: none;
+  padding: 6px 13px;
+  font-weight: 700;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+.eb-btn.save {
+  background: var(--terracotta);
+  color: #FFFFFF;
+}
+.eb-btn:hover {
+  opacity: 0.92;
+}
+
+
+.open-statement-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--terracotta);
+  padding: 28px 32px 26px;
+  margin: 22px 0 28px;
+  box-shadow: 0 2px 10px rgba(26, 67, 78, 0.04);
+}
+.open-statement-panel .os-kicker {
+  font-family: var(--font-body, var(--font-sans));
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 6px;
+}
+.open-statement-panel .os-title {
+  font-family: var(--font-display, var(--font-serif));
+  font-size: clamp(20px, 3vw, 25px);
+  color: var(--accent);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.open-statement-panel .os-epigraph {
+  margin: 0 0 16px;
+  padding: 10px 18px;
+  background: var(--bg);
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16.5px;
+  color: var(--ink);
+}
+.open-statement-panel .os-epigraph p {
+  margin: 0 0 4px;
+}
+.open-statement-panel .os-epigraph .os-cite {
+  font-style: normal;
+  font-family: var(--font-body, var(--font-sans));
+  font-size: 12.5px;
+  color: var(--muted);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.open-statement-panel .os-body p {
+  font-family: var(--font-serif);
+  font-size: 16.8px;
+  line-height: 1.66;
+  color: var(--ink);
+  margin: 0 0 11px;
+}
+.open-statement-panel .os-sig {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  color: var(--accent);
+}
+.open-statement-panel .os-sig span {
+  font-family: var(--font-body, var(--font-sans));
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
+
+.btn.pdf-dl {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: #fff;
+  font-weight: 700;
+}
+.btn.pdf-dl:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.side-pdf-btn {
+  display: block;
+  margin: 0 0 12px;
+  padding: 9px 12px;
+  text-align: center;
+  font-family: var(--font-body, var(--font-sans));
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: var(--terracotta);
+  color: #fff !important;
+  border: 1.5px solid var(--terracotta);
+  text-decoration: none !important;
+}
+.side-pdf-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff !important;
+}
+
+
+.actions.hero-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+.actions.hero-stack .btn {
+  min-width: 340px;
+  text-align: center;
+}
+@media (max-width: 520px) {
+  .actions.hero-stack .btn {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar">
+  <button class="chipbtn" id="menuBtn" aria-controls="side" aria-expanded="false">☰ Contents</button>
+  <span class="t" id="topTitle">Medical-Surgical Nursing: A Canadian Open Text</span>
+</div>
+<div class="scrim" id="scrim" hidden></div>
+<div class="app">
+  <nav class="side" id="side" aria-label="Book contents">
+    <div class="nav-pills">
+      <a class="nav-pill active" id="pillHome" href="#book-home">Book Home</a>
+    </div>
+    <div class="ch-Jump-wrap">
+      <label for="chSelect" class="eyebrow" style="margin:0;">Jump to Chapter (1–36)</label>
+      <select id="chSelect" class="ch-jump-select" aria-label="Select chapter"></select>
+    </div>
+    <div class="brand">
+      <span class="book" id="bookName">OPENNURSING.CA</span>
+      <span class="ch" id="chName">All 36 Chapters &bull; 9 Clinical Units</span>
+    </div>
+    <div class="meter"><span id="meterText"></span><div class="bar"><span id="meterBar"></span></div></div>
+    <div class="search" role="search">
+      <label for="q" class="eyebrow" style="display:block;margin-bottom:4px">Filter chapters by topic</label>
+      <input id="q" type="search" placeholder="e.g. sepsis, heart failure, stroke" autocomplete="off">
+    </div>
+    <div class="toc" id="toc"></div>
+    <div class="side-foot"><button class="chipbtn" id="themeBtn" type="button"></button></div>
+  </nav>
+  <main id="main" tabindex="-1">
+    <div class="page" id="page"></div>
+    <nav class="pager" id="pager" aria-label="Page navigation"></nav>
+  </main>
+</div>
+<script>
+(function () {
+  'use strict';
+  var CH_META = [{"n": 1, "title": "Medical-Surgical Nursing in Canada", "file": "Ch01_MedSurg_Nursing_in_Canada.html", "store": "msn-open-text-ch1-v1", "figs": 11, "tables": 6, "qs": 30, "terms": 56, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 2, "title": "Equity, Cultural Safety and Indigenous Health in Adult Care", "file": "Ch02_Equity_Cultural_Safety_Indigenous_Health.html", "store": "msn-open-text-ch2-v1", "figs": 3, "tables": 5, "qs": 30, "terms": 58, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 3, "title": "Fluids, Electrolytes and Acid–Base Balance", "file": "Ch03_Fluids_Electrolytes_Acid_Base.html", "store": "msn-open-text-ch3-v1", "figs": 6, "tables": 4, "qs": 30, "terms": 58, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 4, "title": "Inflammation, Infection and Sepsis", "file": "Ch04_Inflammation_Infection_Sepsis.html", "store": "msn-open-text-ch4-v1", "figs": 4, "tables": 4, "qs": 30, "terms": 46, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 5, "title": "Pain", "file": "Ch05_Pain.html", "store": "msn-open-text-ch5-v1", "figs": 2, "tables": 4, "qs": 30, "terms": 55, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 6, "title": "Recognizing Deterioration and Shock", "file": "Ch06_Deterioration_and_Shock.html", "store": "msn-open-text-ch6-v1", "figs": 4, "tables": 4, "qs": 30, "terms": 37, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 7, "title": "Perioperative Nursing", "file": "Ch07_Perioperative_Nursing.html", "store": "msn-open-text-ch7-v1", "figs": 4, "tables": 4, "qs": 30, "terms": 44, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 8, "title": "Older Adults in Acute Care", "file": "Ch08_Older_Adults_in_Acute_Care.html", "store": "msn-open-text-ch8-v1", "figs": 3, "tables": 4, "qs": 30, "terms": 37, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 9, "title": "Cancer Care", "file": "Ch09_Cancer_Care.html", "store": "msn-open-text-ch9-v1", "figs": 6, "tables": 3, "qs": 30, "terms": 48, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 10, "title": "Palliative and End-of-Life Care", "file": "Ch10_Palliative_and_End-of-Life_Care.html", "store": "msn-open-text-ch10-v1", "figs": 0, "tables": 3, "qs": 30, "terms": 43, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 11, "title": "Substance Use in Acute Care", "file": "Ch11_Substance_Use_in_Acute_Care.html", "store": "msn-open-text-ch11-v1", "figs": 4, "tables": 3, "qs": 30, "terms": 35, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]}, {"n": 12, "title": "Respiratory Assessment and Oxygen Therapy", "file": "Ch12_Respiratory_Assessment_and_Oxygen_Therapy.html", "store": "msn-open-text-ch12-v1", "figs": 10, "tables": 4, "qs": 35, "terms": 60, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35"]}, {"n": 13, "title": "Lower Respiratory Infections and Lung Cancer", "file": "Ch13_Lower_Respiratory_Infections_and_Lung_Cancer.html", "store": "msn-open-text-ch13-v1", "figs": 7, "tables": 4, "qs": 35, "terms": 42, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35"]}, {"n": 14, "title": "Obstructive and Restrictive Lung Disease", "file": "Ch14_Obstructive_and_Restrictive_Lung_Disease.html", "store": "msn-open-text-ch14-v1", "figs": 7, "tables": 4, "qs": 35, "terms": 57, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35"]}, {"n": 15, "title": "Acute Respiratory Failure and Pulmonary Embolism", "file": "Ch15_Acute_Respiratory_Failure_and_Pulmonary_Embolism.html", "store": "msn-open-text-ch15-v1", "figs": 6, "tables": 4, "qs": 35, "terms": 64, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35"]}, {"n": 16, "title": "Cardiac Assessment and Dysrhythmias", "file": "Ch16_Cardiac_Assessment_and_Dysrhythmias.html", "store": "msn-open-text-ch16-v1", "figs": 22, "tables": 4, "qs": 40, "terms": 52, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 17, "title": "Coronary Artery Disease and Acute Coronary Syndromes", "file": "Ch17_Coronary_Artery_Disease_and_Acute_Coronary_Syndromes.html", "store": "msn-open-text-ch17-v1", "figs": 5, "tables": 4, "qs": 40, "terms": 37, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 18, "title": "Heart Failure, Valvular and Inflammatory Heart Disease", "file": "Ch18_Heart_Failure_Valvular_and_Inflammatory_Heart_Disease.html", "store": "msn-open-text-ch18-v1", "figs": 10, "tables": 4, "qs": 40, "terms": 60, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 19, "title": "Hypertension and Vascular Disorders", "file": "Ch19_Hypertension_and_Vascular_Disorders.html", "store": "msn-open-text-ch19-v1", "figs": 8, "tables": 4, "qs": 40, "terms": 44, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 20, "title": "Hematologic Disorders and Transfusion", "file": "Ch20_Hematologic_Disorders_and_Transfusion.html", "store": "msn-open-text-ch20-v1", "figs": 8, "tables": 4, "qs": 40, "terms": 53, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 21, "title": "Immunity, Allergy and HIV", "file": "Ch21_Immunity_Allergy_and_HIV.html", "store": "msn-open-text-ch21-v1", "figs": 7, "tables": 4, "qs": 40, "terms": 40, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 22, "title": "Diabetes", "file": "Ch22_Diabetes.html", "store": "msn-open-text-ch22-v1", "figs": 6, "tables": 4, "qs": 40, "terms": 41, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 23, "title": "Thyroid, Parathyroid, Adrenal and Pituitary Disorders", "file": "Ch23_Thyroid_Parathyroid_Adrenal_and_Pituitary_Disorders.html", "store": "msn-open-text-ch23-v1", "figs": 5, "tables": 3, "qs": 40, "terms": 53, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 24, "title": "Upper Gastrointestinal Disorders and Nutrition", "file": "Ch24_Upper_Gastrointestinal_Disorders_and_Nutrition.html", "store": "msn-open-text-ch24-v1", "figs": 6, "tables": 4, "qs": 40, "terms": 49, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 25, "title": "Lower Gastrointestinal Disorders", "file": "Ch25_Lower_Gastrointestinal_Disorders.html", "store": "msn-open-text-ch25-v1", "figs": 6, "tables": 4, "qs": 40, "terms": 52, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 26, "title": "Liver, Biliary and Pancreatic Disorders", "file": "Ch26_Liver_Biliary_and_Pancreatic_Disorders.html", "store": "msn-open-text-ch26-v1", "figs": 9, "tables": 4, "qs": 40, "terms": 49, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 27, "title": "Acute Kidney Injury and Chronic Kidney Disease", "file": "Ch27_Acute_Kidney_Injury_and_Chronic_Kidney_Disease.html", "store": "msn-open-text-ch27-v1", "figs": 6, "tables": 3, "qs": 40, "terms": 35, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 28, "title": "Urinary Tract and Prostate Disorders", "file": "Ch28_Urinary_Tract_and_Prostate_Disorders.html", "store": "msn-open-text-ch28-v1", "figs": 5, "tables": 4, "qs": 40, "terms": 60, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 29, "title": "Reproductive and Breast Health in Adult Care", "file": "Ch29_Reproductive_and_Breast_Health_in_Adult_Care.html", "store": "msn-open-text-ch29-v1", "figs": 6, "tables": 3, "qs": 40, "terms": 48, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 30, "title": "Neurologic Assessment and Increased Intracranial Pressure", "file": "Ch30_Neurologic_Assessment_and_Increased_Intracranial_Pressure.html", "store": "msn-open-text-ch30-v1", "figs": 6, "tables": 4, "qs": 40, "terms": 44, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 31, "title": "Stroke", "file": "Ch31_Stroke.html", "store": "msn-open-text-ch31-v1", "figs": 6, "tables": 4, "qs": 40, "terms": 43, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 32, "title": "Traumatic Brain and Spinal Cord Injury and Chronic Neurologic Disorders", "file": "Ch32_Traumatic_Brain_and_Spinal_Cord_Injury_and_Chronic_Neurologic_Disorders.html", "store": "msn-open-text-ch32-v1", "figs": 6, "tables": 4, "qs": 40, "terms": 49, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 33, "title": "Musculoskeletal Trauma and Orthopedic Surgery", "file": "Ch33_Musculoskeletal_Trauma_and_Orthopedic_Surgery.html", "store": "msn-open-text-ch33-v1", "figs": 9, "tables": 4, "qs": 40, "terms": 42, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 34, "title": "Arthritis and Connective Tissue Disorders", "file": "Ch34_Arthritis_and_Connective_Tissue_Disorders.html", "store": "msn-open-text-ch34-v1", "figs": 7, "tables": 4, "qs": 40, "terms": 41, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 35, "title": "Skin, Wounds and Burns", "file": "Ch35_Skin_Wounds_and_Burns.html", "store": "msn-open-text-ch35-v1", "figs": 14, "tables": 4, "qs": 40, "terms": 56, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}, {"n": 36, "title": "Eye and Ear Disorders", "file": "Ch36_Eye_and_Ear_Disorders.html", "store": "msn-open-text-ch36-v1", "figs": 12, "tables": 4, "qs": 40, "terms": 57, "qids": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20", "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30", "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]}];
+  var OPEN_STMT = "<section class=\"open-statement-panel\" aria-labelledby=\"open-stmt-heading\"><div class=\"os-kicker\">Statement on Open Education &bull; Why This Book Is Open</div><h2 id=\"open-stmt-heading\" class=\"os-title\">Knowledge That Heals Belongs to Everyone It Might Help</h2><div class=\"os-body\"><p>Knowledge that heals belongs to everyone it might help. A patient never asks what their nurse could afford to learn; they hope only that the nurse knows enough to keep them safe. A barrier between a student and that knowledge is, in the end, a barrier between a patient and good care.</p><p>Nursing rests on a moral claim: every person has equal worth, and care should follow need rather than wealth or place. We cannot teach that principle honestly from a book only some students can afford. Cost falls hardest on those already carrying the most, and removing it is a matter of fairness, not charity.</p><p>For this reason, <em>Medical-Surgical Nursing: A Canadian Open Text</em> is free to read and use online under a <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\" rel=\"noopener\">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International licence (CC BY-NC-SA 4.0)</a>. Instructors may adapt it, provided what they build stays open. Openness also means access: the book is designed to meet Ontario&rsquo;s accessibility requirements (AODA) and WCAG 2.1 Level AA, so that no student is shut out by disability.</p><p>Open education rests on the belief that we learn best together. If you find an error, a barrier or a way to improve this book, please <a href=\"mailto:andrewleenl@gmail.com\">tell me</a>. Each correction is a small act of care for the next student, and for the patients that student will serve.</p></div><div class=\"os-sig\"><strong>Andrew Lee, BEd, BN, MN, RN, CCN(C)</strong><br><span>Professor of Nursing, Loyalist College &bull; <a href=\"mailto:andrewleenl@gmail.com\">andrewleenl@gmail.com</a></span></div></section>";
+  var UNITS = [
+    ["I", "Unit I", "Foundations of Canadian Medical-Surgical Practice", [1,2,3,4,5,6]],
+    ["II", "Unit II", "Cross-Cutting Clinical Priorities in Adult Care", [7,8,9,10,11]],
+    ["III", "Unit III", "Respiratory Nursing Care", [12,13,14,15]],
+    ["IV", "Unit IV", "Cardiovascular & Vascular Nursing Care", [16,17,18,19]],
+    ["V", "Unit V", "Hematologic, Immunologic & Endocrine Care", [20,21,22,23]],
+    ["VI", "Unit VI", "Gastrointestinal, Hepatic, Biliary & Pancreatic Care", [24,25,26]],
+    ["VII", "Unit VII", "Renal, Urologic & Reproductive Health Care", [27,28,29]],
+    ["VIII", "Unit VIII", "Neurologic & Cerebrovascular Nursing Care", [30,31,32]],
+    ["IX", "Unit IX", "Musculoskeletal, Integumentary & Sensory Care", [33,34,35,36]]
+  ];
+  var SI_LABS = [
+    ["Sodium (Na⁺)", "Serum / Plasma", "135–145 mmol/L", "< 120 or > 160 mmol/L", "Ch. 3, 27, 30"],
+    ["Potassium (K⁺)", "Serum / Plasma", "3.5–5.0 mmol/L", "< 2.8 or > 6.0 mmol/L", "Ch. 3, 16, 27"],
+    ["Chloride (Cl⁻)", "Serum / Plasma", "98–107 mmol/L", "< 80 or > 115 mmol/L", "Ch. 3"],
+    ["Bicarbonate (HCO₃⁻)", "Serum / Venous", "22–26 mmol/L", "< 15 or > 40 mmol/L", "Ch. 3, 15, 27"],
+    ["Calcium, Total (Ca²⁺)", "Serum", "2.15–2.55 mmol/L", "< 1.75 or > 3.25 mmol/L", "Ch. 3, 23, 27"],
+    ["Calcium, Ionized", "Whole Blood", "1.15–1.30 mmol/L", "< 0.80 or > 1.60 mmol/L", "Ch. 3, 20, 23"],
+    ["Magnesium (Mg²⁺)", "Serum", "0.70–1.05 mmol/L", "< 0.50 or > 2.00 mmol/L", "Ch. 3, 16"],
+    ["Phosphate (PO₄³⁻)", "Serum", "0.80–1.45 mmol/L", "< 0.32 mmol/L", "Ch. 3, 27"],
+    ["Glucose (Fasting)", "Plasma", "4.0–6.0 mmol/L", "< 2.8 or > 25.0 mmol/L", "Ch. 22"],
+    ["HbA1c", "Whole Blood", "4.5%–5.9% (Target ≤ 7.0%)", "—", "Ch. 22"],
+    ["Urea", "Serum / Plasma", "2.5–7.1 mmol/L", "> 35.0 mmol/L", "Ch. 27"],
+    ["Creatinine", "Serum / Plasma", "50–110 µmol/L", "> 400 µmol/L (acute)", "Ch. 27"],
+    ["eGFR", "Calculated", "≥ 90 mL/min/1.73 m²", "< 15 mL/min/1.73 m² (G5)", "Ch. 27"],
+    ["Lactate", "Plasma", "0.5–2.0 mmol/L", "≥ 4.0 mmol/L (septic shock)", "Ch. 4, 6"],
+    ["Serum Osmolality", "Serum", "275–295 mOsm/kg", "< 250 or > 325 mOsm/kg", "Ch. 3, 22, 30"],
+    ["Hemoglobin (Hb)", "Whole Blood", "120–160 g/L (F) / 135–175 g/L (M)", "< 70 g/L (transfusion threshold)", "Ch. 20, 24"],
+    ["White Blood Cells (WBC)", "Whole Blood", "4.0–11.0 × 10⁹/L", "< 1.5 or > 30.0 × 10⁹/L", "Ch. 4, 9, 20"],
+    ["Absolute Neutrophils (ANC)", "Whole Blood", "2.0–7.5 × 10⁹/L", "< 0.5 × 10⁹/L (febrile neutropenia)", "Ch. 9, 20"],
+    ["Platelets", "Whole Blood", "150–400 × 10⁹/L", "< 20 × 10⁹/L or > 1,000 × 10⁹/L", "Ch. 20, 26"],
+    ["INR", "Citrated Plasma", "0.9–1.2 (Warfarin target 2.0–3.0)", "> 4.5 (major bleeding risk)", "Ch. 16, 19, 20"],
+    ["aPTT", "Citrated Plasma", "25–35 seconds", "> 100 seconds", "Ch. 15, 19, 20"],
+    ["Total Bilirubin", "Serum", "3–21 µmol/L", "> 250 µmol/L", "Ch. 20, 26"],
+    ["ALT / AST", "Serum", "ALT 7–40 U/L; AST 10–40 U/L", "> 1,000 U/L", "Ch. 26"],
+    ["Albumin", "Serum", "35–50 g/L", "< 20 g/L", "Ch. 24, 26, 27"],
+    ["Ammonia (NH₃)", "Plasma", "15–45 µmol/L", "> 100 µmol/L", "Ch. 26"],
+    ["TSH", "Serum", "0.40–4.50 mIU/L", "< 0.01 or > 20.0 mIU/L", "Ch. 23"],
+    ["Uric Acid (Urate)", "Serum", "180–420 µmol/L (Target < 360 µmol/L)", "> 540 µmol/L", "Ch. 34"],
+    ["Arterial pH / PaCO₂ / PaO₂", "Arterial Blood", "pH 7.35–7.45 · PaCO₂ 35–45 · PaO₂ 80–100 mmHg", "pH < 7.20 or PaO₂ < 60 mmHg", "Ch. 3, 12, 15"]
+  ];
+
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
+
+  var selHtml = '<option value="">Select a chapter (1–36)...</option>';
+  CH_META.forEach(function (c) {
+    selHtml += '<option value="' + esc(c.file) + '">Ch. ' + (c.n < 10 ? '0' + c.n : c.n) + ' — ' + esc(c.title) + '</option>';
+  });
+  $('chSelect').innerHTML = selHtml;
+  $('chSelect').addEventListener('change', function () {
+    if (this.value) location.href = this.value;
+  });
+
+  var THEME_KEY = 'msn-open-text-global-theme';
+  var theme = 'auto';
+  try { theme = localStorage.getItem(THEME_KEY) || 'auto'; } catch (e) {}
+  function applyTheme() {
+    if (theme === 'auto') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', theme);
+    $('themeBtn').textContent = 'Theme: ' + ({auto: 'Auto', light: 'Light', dark: 'Dark'}[theme] || 'Auto');
+  }
+  $('themeBtn').addEventListener('click', function () {
+    theme = ({auto: 'light', light: 'dark', dark: 'auto'}[theme]) || 'auto';
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    applyTheme();
+  });
+  applyTheme();
+
+  function getChProgress(c) {
+    var a = 0, ok = 0, k = 0;
+    try {
+      var raw = localStorage.getItem(c.store);
+      if (raw) {
+        var st = JSON.parse(raw);
+        if (st.q) {
+          c.qids.forEach(function (id) {
+            if (st.q[id] && st.q[id].done) { a++; if (st.q[id].ok) ok++; }
+          });
+        }
+        if (st.known) k = Object.keys(st.known).length;
+      }
+    } catch (e) {}
+    return {a: a, c: ok, n: c.qs, k: k, t: c.terms};
+  }
+
+  function drawSidebar(mode, filterTerm) {
+    $('pillHome').classList.toggle('active', mode !== 'book-labs');
+    
+    var term = (filterTerm || '').trim().toLowerCase();
+    var totQ = 0, totC = 0, totT = 0, totK = 0;
+    var h = '';
+    UNITS.forEach(function (u) {
+      var itemsHtml = '';
+      u[3].forEach(function (n) {
+        var c = CH_META[n - 1], pr = getChProgress(c);
+        totQ += pr.n; totC += pr.c; totT += pr.t; totK += pr.k;
+        if (term && c.title.toLowerCase().indexOf(term) < 0 && ('ch ' + n).indexOf(term) < 0 && ('chapter ' + n).indexOf(term) < 0) return;
+        itemsHtml += '<li><a href="' + esc(c.file) + '"><span><strong>' + (n < 10 ? '0' + n : n) + '.</strong> ' + esc(c.title) + '</span><span class="st' + (pr.c === pr.n && pr.n > 0 ? ' done' : '') + '">' + (pr.c > 0 ? pr.c + '/' + pr.n : '') + '</span></a></li>';
+      });
+      if (itemsHtml) {
+        h += '<div><h2>' + esc(u[1] + ' · ' + u[2]) + '</h2><ol>' + itemsHtml + '</ol></div>';
+      }
+    });
+    if (!term || 'adult canadian si lab reference table appendix'.indexOf(term) >= 0) {
+      h += "<div><h2>Appendix &middot; Back Matter</h2><ol><li><a href=\"#book-labs\"><span><strong>A.</strong> Adult Canadian SI Lab Reference Table</span><span class=\"st\">SI</span></a></li></ol></div>";
+    }
+    $('toc').innerHTML = h || '<p class="none">No matching chapters.</p>';
+    var pct = Math.round(100 * (totC / Math.max(1, totQ) * 0.6 + totK / Math.max(1, totT) * 0.4));
+    $('meterText').textContent = totC + ' of ' + totQ + ' questions correct · ' + totK + ' of ' + totT + ' terms known';
+    $('meterBar').style.width = pct + '%';
+    return {totQ: totQ, totC: totC, totT: totT, totK: totK};
+  }
+
+  function renderBookHome(filterTerm) {
+    var totals = drawSidebar('book-home', filterTerm);
+    var term = (filterTerm || '').trim().toLowerCase();
+    var h = '<div class="hero">' +
+      '<p class="eyebrow">OPENNURSING.CA · Canadian Nursing Open Educational Resource · First Edition (2026)</p>' +
+      '<h1>Medical-Surgical Nursing: A Canadian Open Text</h1>' +
+      '<p class="byline">Andrew Lee, BEd, BN, MN, RN, CCN(C) · Professor of Nursing, Loyalist College, Belleville, Ontario</p>' +
+      '<p class="version">Interactive Online Edition · Creative Commons CC BY-NC-SA 4.0</p>' +
+      '</div>' +
+      '<div class="stats">' +
+      '<div class="stat"><b>36</b><span>Interactive Chapters (9 Units)</span></div>' +
+      '<div class="stat"><b>' + totals.totC + ' / ' + totals.totQ + '</b><span>Licensure Questions Correct</span></div>' +
+      '<div class="stat"><b>' + totals.totK + ' / ' + totals.totT + '</b><span>Key Term Flashcards Known</span></div>' +
+      '</div>' +
+      '<div class="actions hero-stack">' +
+      '<a class="btn pdf-dl" href="Medical_Surgical_Nursing_Complete_Book.pdf" download="Medical_Surgical_Nursing_Complete_Book.pdf">&#11015; Download Complete Textbook (PDF)</a>' +
+      '<a class="btn" href="' + esc(CH_META[0].file) + '">Start Chapter 1: Medical-Surgical Nursing in Canada →</a>' +
+      '</div>' +
+      OPEN_STMT;
+
+    UNITS.forEach(function (u) {
+      var cards = '';
+      u[3].forEach(function (n) {
+        var c = CH_META[n - 1], pr = getChProgress(c);
+        if (term && c.title.toLowerCase().indexOf(term) < 0 && ('ch ' + n).indexOf(term) < 0 && ('chapter ' + n).indexOf(term) < 0) return;
+        var progTxt = pr.a > 0 ? (pr.c + '/' + pr.n + ' correct · Resume →') : 'Open chapter & practice →';
+        cards += '<a class="book-ch-card" href="' + esc(c.file) + '">' +
+          '<div><div class="c-top"><span class="c-num">' + (n < 10 ? '0' + n : n) + '</span><span class="c-lbl">Chapter ' + n + '</span></div>' +
+          '<h3>' + esc(c.title) + '</h3>' +
+          '<div class="c-meta"><strong>' + c.figs + '</strong> Figs · <strong>' + c.tables + '</strong> Tbls · <strong>' + c.qs + '</strong> Qs · <strong>' + c.terms + '</strong> Terms</div></div>' +
+          '<div class="c-go">' + esc(progTxt) + '</div></a>';
+      });
+      if (cards) {
+        h += '<section class="unit-section"><div class="unit-banner"><div class="unit-roman-lg">' + u[0] + '</div><div class="unit-banner-titles"><span>' + esc(u[1]) + ' · Chapters ' + u[3][0] + '–' + u[3][u[3].length - 1] + '</span><h2>' + esc(u[2]) + '</h2></div></div><div class="book-ch-grid">' + cards + '</div></section>';
+      }
+    });
+
+    if (!term || 'adult canadian si lab reference table appendix'.indexOf(term) >= 0) {
+      h += "<section class=\"unit-section\" id=\"appendix-section\"><div class=\"unit-banner\"><div class=\"unit-roman-lg\">A</div><div class=\"unit-banner-titles\"><span>Appendix &middot; Back Matter</span><h2>Adult Canadian SI Lab Reference Table</h2></div></div><div class=\"book-ch-grid\"><a class=\"book-ch-card\" href=\"#book-labs\"><div><div class=\"c-top\"><span class=\"c-num\">A</span><span class=\"c-lbl\">Appendix A</span></div><h3>Adult Canadian SI Lab Reference Table</h3><div class=\"c-meta\"><strong>28</strong> Analytes &middot; <strong>SI</strong> Units (mmol/L, &mu;mol/L, g/L) &middot; <strong>CSCC &amp; MCC</strong> Intervals</div></div><div class=\"c-go\">Open SI Lab Reference Table &rarr;</div></a></div></section>";
+    }
+    $('page').innerHTML = h;
+    $('pager').innerHTML = '<a class="next" href="' + esc(CH_META[0].file) + '"><span>Begin Reading</span><b>Chapter 1: Medical-Surgical Nursing in Canada →</b></a>';
+  }
+
+  function renderBookLabs() {
+    drawSidebar('book-labs', '');
+    var rows = SI_LABS.map(function (r) {
+      return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td><td><strong>' + esc(r[2]) + '</strong></td><td>' + esc(r[3]) + '</td><td>' + esc(r[4]) + '</td></tr>';
+    }).join('');
+    $('page').innerHTML = '<p class="eyebrow">Back Matter · Reference Appendix A</p>' +
+      '<h2 class="title" tabindex="-1">Adult Canadian SI Reference Laboratory Intervals</h2>' +
+      '<p>Canadian clinical laboratories report hematologic, biochemical, and endocrine analytes using Système International (SI) units (<strong>mmol/L</strong>, <strong>µmol/L</strong>, <strong>g/L</strong>, and <strong>× 10⁹/L</strong>) harmonized with the Canadian Society of Clinical Chemists (CSCC) and Medical Council of Canada reference intervals. Always verify patient results against the local hospital laboratory’s specific assay reference range.</p>' +
+      '<div class="tbl" tabindex="0" role="region" aria-label="SI Reference Laboratory Intervals"><table><caption><strong>Appendix A</strong> Adult Canadian SI Reference Laboratory Intervals</caption>' +
+      '<thead><tr><th>Analyte</th><th>Specimen</th><th>Adult SI Reference Interval</th><th>Critical / Escalation Threshold</th><th>Chapters</th></tr></thead>' +
+      '<tbody>' + rows + '</tbody></table></div>';
+    $('pager').innerHTML = '<a href="#book-home"><span>Book Directory</span><b>← All 36 Chapters</b></a><a class="next" href="' + esc(CH_META[0].file) + '"><span>Chapter 1</span><b>Medical-Surgical Nursing in Canada →</b></a>';
+    window.scrollTo(0, 0);
+  }
+
+  function closeMenu() { $('side').classList.remove('open'); $('scrim').hidden = true; $('menuBtn').setAttribute('aria-expanded', 'false'); }
+  $('menuBtn').addEventListener('click', function () { var o = !$('side').classList.contains('open'); $('side').classList.toggle('open', o); $('scrim').hidden = !o; this.setAttribute('aria-expanded', String(o)); });
+  $('scrim').addEventListener('click', closeMenu);
+
+  $('q').addEventListener('input', function () {
+    if (location.hash === '#book-labs') location.hash = '#book-home';
+    renderBookHome(this.value);
+  });
+
+  function route() {
+    closeMenu();
+    if (location.hash === '#book-labs') renderBookLabs();
+    else renderBookHome($('q').value);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
